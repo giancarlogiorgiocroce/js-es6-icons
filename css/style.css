@@ -1,0 +1,74 @@
+/*
+    GENERAL
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/*
+    /GENERAL
+*/
+
+/*
+    HEADER
+*/
+header span{
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(41, 177, 221);
+}
+/*
+    /HEADER
+*/
+
+/*
+    NAV
+*/
+nav{
+    height: 75px;
+    background-color: rgb(41, 177, 221);
+}
+
+nav label{
+    font-size: 22px;
+}
+/*
+    /NAV
+*/
+
+/*
+    MAIN
+*/
+main{
+    background-color: lightgrey;
+    min-height: calc(100vh - 60px - 75px);
+}
+
+.my-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: white;
+    width: 220px;
+    height: 100px;
+    margin: 30px 30px;
+
+    border-radius: 20px;
+}
+
+main i{
+    font-size: 40px;
+}
+
+main p{
+    text-transform: uppercase;
+    margin: 3px 0;
+}
+/*
+    /MAIN
+*/
