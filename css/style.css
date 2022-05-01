@@ -35,6 +35,11 @@ nav{
 nav label{
     font-size: 22px;
 }
+
+nav select,
+nav option{
+    text-transform: capitalize;
+}
 /*
     /NAV
 */
