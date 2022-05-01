@@ -1,18 +1,35 @@
 /***************************
     VARIABILI GLOBALI
 ***************************/
-const animalArray = dataArray.filter(el=>(el.type === "animal"));
-const vegetalArray = dataArray.filter(el=>(el.type === "vegetable"));
-const humanArray = dataArray.filter(el=>(el.type === "user"));
-
 const stampaQui = document.querySelector(".main-col");
-// const AF = ["A", "B", "C", "D", "E", "F", 1, 2, 3, 4, 5, 6, 7, 8, 9];
-// console.log(AF);
+const hexLimit = 6;
+const alphaNum = ["A", "B", "C", "D", "E", "F", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 
 /***************************
     FUNZIONI DI UTILITà
 ***************************/
+const animalArray = dataArray.filter( (el) => el.type === "animal" );
+const vegetalArray = dataArray.filter( (el) => el.type === "vegetable" );
+const humanArray = dataArray.filter( (el) => el.type === "user" );
+
+
+//  ---> COLORE
+    // Tutto questo codice non è farina del mio sacco. E' qui solo perché possa studiarlo.
+const rdmNumber = (max) => Math.floor(Math.random()*max);
+    // Questa sintassi ad esempio, 0 chiara.
+const rdmColor = (arr) => arr[rdmNumber(arr.length)];
+
+function coloreCasuale(){
+    const arrayColoreEstratto = [];
+    for(let i=0; i<hexLimit; i++){
+        arrayColoreEstratto.push(rdmColor(alphaNum));
+    }
+    const coloreHex = arrayColoreEstratto.join("");
+    return coloreHex;
+}
+
+//  ---> STAMPA
 function stampaSchede (arr) {
     arr.forEach(el => {
         const {name, prefix, type, color} = el;
@@ -24,7 +41,7 @@ function stampaScheda(name, prefix, type, color){
     stampaQui.innerHTML +=
     `
     <div class="my-card ${type}">
-        <i class="${prefix}solid ${prefix}${name} ${type}" style="color:${color}"></i>
+        <i class="${prefix}solid ${prefix}${name} ${type}" style="color: #${coloreCasuale()}"></i>
         <p>${name}</p>
     </div>
     `
