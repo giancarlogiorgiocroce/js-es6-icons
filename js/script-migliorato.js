@@ -1,9 +1,10 @@
 /***************************
     VARIABILI GLOBALI
 ***************************/
-const animalArray = [];
-const vegetalArray = [];
-const humanArray = [];
+const animalArray = dataArray.filter(el=>(el.type === "animal"));
+const vegetalArray = dataArray.filter(el=>(el.type === "vegetable"));
+const humanArray = dataArray.filter(el=>(el.type === "user"));
+
 const stampaQui = document.querySelector(".main-col");
 // const AF = ["A", "B", "C", "D", "E", "F", 1, 2, 3, 4, 5, 6, 7, 8, 9];
 // console.log(AF);
@@ -12,19 +13,6 @@ const stampaQui = document.querySelector(".main-col");
 /***************************
     FUNZIONI DI UTILITà
 ***************************/
-function smistatore () {
-    dataArray.forEach(el => {
-        const {type} = el;
-        if(type.includes("animal")){
-            animalArray.push(el);
-        } else if (type.includes("vegetable")){
-            vegetalArray.push(el);
-        } else if (type.includes("user")){
-            humanArray.push(el);
-        }
-    });
-}
-
 function stampaSchede (arr) {
     arr.forEach(el => {
         const {name, prefix, type, color} = el;
@@ -64,11 +52,6 @@ function stampaSelezionato(){
 /***************************
     INIZIALIZZAZIONE
 ***************************/
-inizia();
-
-function inizia(){
-    smistatore();
-    stampaSchede(dataArray);
-    stampaSelezionato();
-}
+stampaSchede(dataArray);
+stampaSelezionato();
 
